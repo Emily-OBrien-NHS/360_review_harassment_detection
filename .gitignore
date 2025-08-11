@@ -1,0 +1,32 @@
+# any png files
+*.png
+
+# any excel files
+*.xlsx
+
+# any csv files
+*.csv
+
+# any json files
+*.json
+
+# any tsv files
+*.tsv
+
+#any pptx files
+*.pptx
+
+#any venv
+*.venv
+
+#any pyc
+*.pyc
+
+#any docx files
+*.docx
+
+#Outputs folder
+Outputs/
+
+#emails text file
+emails.txt
