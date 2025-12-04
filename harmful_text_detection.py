@@ -17,6 +17,7 @@ from better_profanity import profanity
 #https://pypi.org/project/better-profanity/
 import nltk
 from nltk.stem import WordNetLemmatizer
+print('Downloading NLTK')
 nltk.download("wordnet")
 nltk.download("omw-1.4")
 
@@ -28,7 +29,7 @@ t0 = time.time()
 today = datetime.today().strftime('%Y-%m-%d')
 wnl = WordNetLemmatizer()
 original = Detoxify('original')
-os.chdir('C:/Users/obriene/Projects/Text Data Analysis/360 Feedback Analysis')
+os.chdir('G:/PerfInfo/Performance Management/OR Team/Emily Projects/Text Data Analysis/360 Feedback Analysis')
 print('Reading in Data')
 
 #Read in 360 feedback responses
@@ -154,7 +155,7 @@ feedback = feedback[feedback_cols].reset_index(drop=True).copy()
 ################################################################################
                             #Save to Excel#
 ################################################################################
-file_path = f'C:/Users/obriene/Projects/Text Data Analysis/360 Feedback Analysis/Outputs/Flagged 360 responses {today}.xlsx'
+file_path = f'G:/PerfInfo/Performance Management/OR Team/Emily Projects/Text Data Analysis/360 Feedback Analysis/Outputs/Flagged 360 responses {today}.xlsx'
 writer = pd.ExcelWriter(file_path, engine="xlsxwriter")
 feedback[feedback_cols].to_excel(writer, sheet_name='Responses', index=False)
 
@@ -220,7 +221,6 @@ outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)    
 # Set email properties
 mail.To = open('emails.txt', 'r').read()
-#mail.To = 'e.obrien6@nhs.net'
 mail.Subject = '360-feedback flagged responses'
 mail.Body = """Hi,\n
 Please find attatched the latest flagged responses from the 360-degree feedback forms. Let me know if you have any issues or questions \n
